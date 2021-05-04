@@ -45,4 +45,10 @@ Response
     "message": "success"
 }
 
+**Crone Set Up For Task**
+
+GET
+http://yourvirtualhostname/api/getTask.php  { 3 * * * * } every 3 minutes in every day everymonth
+
+
 
