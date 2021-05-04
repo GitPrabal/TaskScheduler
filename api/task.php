@@ -10,6 +10,7 @@ $db = $database->getConnection();
 // Check Method Type
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
+    http_response_code(405);
     $result = json_encode(array("message" => "Method Not Allowed."));
     return $result;
 }
@@ -25,7 +26,8 @@ try {
         http_response_code(200);
         echo json_encode(array("message" => "Created."));
     } else {
-        echo json_encode(array("message" => "Fail."));
+        http_response_code(500);
+        echo json_encode(array("message" => "Internal Server Error."));
     }
 
 }

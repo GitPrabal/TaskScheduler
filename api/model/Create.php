@@ -24,7 +24,7 @@ class Create {
 
     }
 
-    function createTask($job=null,$status=null){
+    function createTask($job,$status){
 
         $query = "INSERT INTO " . $this->task_table . " SET job = :job, status = :status";
         // prepare the query

@@ -9,7 +9,7 @@ class Task {
         $this->conn = $db;
     }
     
-    public function getTask() {
+    public function getPendingTask() {
 
         $query = "SELECT id,job FROM " . $this->table_name . " where status = 'pending' ";
         $stmt = $this->conn->prepare($query);
