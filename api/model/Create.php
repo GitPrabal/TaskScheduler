@@ -12,18 +12,7 @@ class Create {
         $this->conn = $db;
     }
    
-    function createTable() {
-        $query = "CREATE TABLE IF NOT EXISTS ".$this->task_table." (
-        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        job LONGTEXT,
-        status varchar(100),
-        created_at TIMESTAMP)";
-        // prepare the query
-        $stmt = $this->conn->prepare($query);
-        return $stmt->execute();
-
-    }
-
+    
     function createTask($job,$status){
 
         $query = "INSERT INTO " . $this->task_table . " SET job = :job, status = :status";

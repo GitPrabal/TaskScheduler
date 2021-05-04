@@ -19,7 +19,6 @@ try {
 
     $createTask = new Create($db);
     $task    = json_decode(file_get_contents("php://input"));
-    $data = $createTask->createTable();
     $data = $createTask->createTask($task->job, $task->status);
 
     if ( $data ) {
